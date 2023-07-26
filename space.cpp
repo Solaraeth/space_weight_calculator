@@ -2,26 +2,29 @@
 
 int main() {
 
-    double earthbw;
+    // Store the user's body weight on Earth
+    float earthbw;
+
+    // Store a switch variable for the user's planet choice
     int planet;
 
-    // Ask for user's earth body weight
+    // Ask for user's Earth body weight
     std::cout << "Input Earth body weight (kg): ";
     std::cin >> earthbw;
 
-    // Ask user for desired planet to convert bodyweight to
-    std::cout << "Planets:\n";
-    std::cout << "1 = Mercury\n";
-    std::cout << "2 = Venus\n";
-    std::cout << "3 = Mars\n";
-    std::cout << "4 = Jupiter\n";
-    std::cout << "5 = Saturn\n";
-    std::cout << "6 = Uranus\n";
-    std::cout << "7 = Neptune\n";
-    std::cout << "Input number for desired planet: ";
+    // Ask user for desired planet to convert body weight to
+    std::cout << "Planets:\n" 
+                "1 = Mercury\n"
+                "2 = Venus\n"
+                "3 = Mars\n"
+                "4 = Jupiter\n"
+                "5 = Saturn\n"
+                "6 = Uranus\n"
+                "7 = Neptune\n"
+                "Input number for desired planet: ";
     std::cin >> planet;
 
-    // Convert earthbw variable to equivelant mass on user chosen planet
+    // Convert Earth body weight variable to equivalent mass on user's chosen planet
     switch(planet) {
         case 1 :
             std::cout << "Your weight on Mercury would be: " << earthbw * 0.38 << "kg\n";
@@ -46,11 +49,5 @@ int main() {
         default :
             std::cout << "Invalid Input\n";
             break;
-
-
-
     }
-
-
-
 }
