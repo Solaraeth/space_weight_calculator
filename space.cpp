@@ -45,7 +45,7 @@ int main() {
         std::string planetInput;
         std::cin >> planetInput;
 
-        // Try to convert the input string to a float
+        // Try to convert the input string to an integer
         try {
             planet = std::stoi(planetInput);
             validInput = true;
