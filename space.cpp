@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+//#include <string>
 
 int main() {
     // Store the user's body weight on Earth
@@ -47,7 +49,7 @@ int main() {
 
         // Try to convert the input string to an integer
         try {
-            planet = std::stoi(planetInput);
+            planet = std::stoi(planetInput) - 1;
             validInput = true;
         }     
 
@@ -57,27 +59,10 @@ int main() {
         }
     }
 
-    // Convert Earth body weight variable to equivalent mass on user's chosen planet
-    switch(planet) {
-        case 1 :
-            std::cout << "Your weight on Mercury would be: " << earthbw * 0.38 << "kg\n";
-            break;
-        case 2 :
-            std::cout << "Your weight on Venus would be: " << earthbw * 0.91 << "kg\n";
-            break;
-        case 3 :
-            std::cout << "Your weight on Mars would be: " << earthbw * 0.38 << "kg\n";
-            break;
-        case 4 :
-            std::cout << "Your weight on Jupiter would be: " << earthbw * 2.34 << "kg\n";
-            break;
-        case 5 :
-            std::cout << "Your weight on Saturn would be: " << earthbw * 1.06 << "kg\n";
-            break;
-        case 6 :
-            std::cout << "Your weight on Uranus would be: " << earthbw * 0.92 << "kg\n";
-            break;
-        default:
-            std::cout << "Your weight on Neptune would be: " << earthbw * 1.19 << "kg\n";                       
-    }
+    std::vector<std::string> planetName = {"Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"};
+    std::vector<float> multiplier = {0.38, 0.91, 0.38, 2.34, 1.06, 0.92, 1.19};
+
+
+    std::cout << "Your weight on " << planetName[planet] << " would be: " << earthbw * multiplier[planet] << "kg\n";
+
 }
