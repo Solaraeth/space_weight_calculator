@@ -33,7 +33,7 @@ int main() {
     validInput = false;
 
     // Validate the user input
-    while (!validInput) {
+    do {
         // Ask user for desired planet to convert body weight to    
         std::cout << "Planets:\n" 
                     "1 = Mercury\n"
@@ -51,13 +51,19 @@ int main() {
         try {
             planet = std::stoi(planetInput) - 1;
             validInput = true;
+
+            // Check if user input is within valid range
+            if (planet < 0 || planet > 6) {
+                validInput = false;
+                std::cout << "Invalid input. Please enter a value between 1 and 7.\n";
+            }
         }     
 
         // Catch exceptions and give the user a retry prompt
         catch (const std::exception& e) {
             std::cout << "Invalid input. Please enter a valid integer.\n";
         }
-    }
+    } while (!validInput);
 
     std::vector<std::string> planetName = {"Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"};
     std::vector<float> multiplier = {0.38, 0.91, 0.38, 2.34, 1.06, 0.92, 1.19};
